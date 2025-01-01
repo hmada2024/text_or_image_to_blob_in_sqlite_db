@@ -9,6 +9,23 @@ class AudioConverterApp:
         self.master = master
         master.title("محول النص إلى صوت")
 
+        # إضافة وصف التطبيق
+        description_frame = ttk.LabelFrame(master, text="وصف التطبيق")
+        description_frame.pack(padx=10, pady=10, fill="x")
+
+        description_label = tk.Label(description_frame, text=(
+            "أهلاً بك في تطبيق محول النص إلى صوت!\n"
+            "يتيح لك هذا التطبيق تحويل النصوص الموجودة في قاعدة بيانات SQLite إلى ملفات صوتية\n"
+            "بالاعتماد على مكتبة gTTS (Google Text-to-Speech).\n\n"
+            "الخطوات:\n"
+            "1. اختر ملف قاعدة البيانات.\n"
+            "2. اختر الجدول والعمود الذي يحتوي على النص.\n"
+            "3. اختر الجدول والعمود الذي سيتم تخزين الصوت فيه.\n"
+            "4. اضغط على زر 'تحويل النص إلى صوت' للبدء في التحويل.\n\n"
+            "تمتع باستخدام التطبيق!"
+        ), anchor="center", justify="center", wraplength=400)
+        description_label.pack(padx=10, pady=10)
+
         # متغيرات لتخزين الاختيارات
         self.db_path = tk.StringVar()
         self.source_table = tk.StringVar()
