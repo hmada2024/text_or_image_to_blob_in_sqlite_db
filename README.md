@@ -1,21 +1,48 @@
-# محول النص إلى صوت
+Text to Speech Converter
+Welcome to the Text to Speech Converter app! This application allows you to convert text in a SQLite database to audio files using the gTTS (Google Text-to-Speech) library.
 
-أهلاً بك في تطبيق محول النص إلى صوت!
-يتيح لك هذا التطبيق تحويل النصوص الموجودة في قاعدة بيانات SQLite إلى ملفات صوتية
-بالاعتماد على مكتبة gTTS (Google Text-to-Speech).
+Steps to use the application:
+Choose the database file.
 
-## الخطوات لاستخدام التطبيق:
-1. اختر ملف قاعدة البيانات.
-2. اختر الجدول والعمود الذي يحتوي على النص.
-3. اختر الجدول والعمود الذي سيتم تخزين الصوت فيه.
-4. اضغط على زر 'تحويل النص إلى صوت' للبدء في التحويل.
+Select the table and column containing the text.
 
-## المتطلبات:
-- Python 3
-- مكتبة gTTS
-- مكتبة tkinter
-- مكتبة sqlite3
+Select the table and column to store the audio.
 
-## كيفية التثبيت:
-```sh
+Click the 'Convert Text to Speech' button to start the conversion.
+
+Requirements:
+Python 3
+
+gTTS library
+
+tkinter library
+
+sqlite3 library
+
+Installation:
+sh
 pip install gtts
+Image to BLOB Converter
+Welcome to the Image to BLOB Converter app! This application allows you to convert images from your computer to BLOB data and insert them into a column in a SQLite database table.
+
+Steps to use the application:
+Choose the database file.
+
+Select the table and column to store the image.
+
+Click the 'Browse' button to choose an image.
+
+Click the 'Convert Image to BLOB' button to start the conversion.
+
+Requirements:
+Python 3
+
+Pillow library
+
+tkinter library
+
+sqlite3 library
+
+Installation:
+sh
+pip 
