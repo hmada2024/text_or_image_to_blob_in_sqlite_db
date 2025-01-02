@@ -148,6 +148,17 @@ class AudioConverterApp:
             for row in rows:
                 item_id, text_to_convert = row
                 try:
+                    # التحقق مما إذا كان العمود الصوتي في جدول الوجهة يحتوي على بيانات
+                    cursor.execute(f"SELECT {destination_column} FROM {destination_table} WHERE id = ?", (item_id,))
+                    result = cursor.fetchone()
+
+                    if result and result[0] is not None:  # إذا كان العمود يحتوي على بيانات (ليس NULL)
+                        print(f"تم تخطي الصف (ID: {item_id}) لأن العمود الصوتي يحتوي بالفعل على بيانات.")
+                        self.progress["value"] += 1
+                        self.master.update_idletasks()
+                        continue  # الانتقال إلى الصف التالي
+
+                    # إذا كان العمود الصوتي NULL، يتم تحويل النص إلى صوت
                     audio_blob = self.convert_text_to_blob(text_to_convert)
                     # تحديث جدول الوجهة
                     cursor.execute(f"UPDATE {destination_table} SET {destination_column} = ? WHERE id = ?", (audio_blob, item_id))
