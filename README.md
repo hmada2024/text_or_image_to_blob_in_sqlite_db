@@ -1,4 +1,5 @@
-Text to Speech Converter
+                Text to Speech Converter
+
 Welcome to the Text to Speech Converter app! This application allows you to convert text in a SQLite database to audio files using the gTTS (Google Text-to-Speech) library.
 
 Steps to use the application:
@@ -22,7 +23,8 @@ sqlite3 library
 Installation:
 sh
 pip install gtts
-Image to BLOB Converter
+
+                 Image to BLOB Converter
 Welcome to the Image to BLOB Converter app! This application allows you to convert images from your computer to BLOB data and insert them into a column in a SQLite database table.
 
 Steps to use the application:
