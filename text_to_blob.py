@@ -114,7 +114,9 @@ class AudioConverterApp:
                 messagebox.showerror("خطأ", f"خطأ في جلب أعمدة الجدول: {e}")
 
     def convert_text_to_blob(self, text):
-        tts = gTTS(text=text, lang='en')
+        # استبدال النجوم والشرطة السفلية والشرطة بمسافة
+        text_without_chars = text.replace('**', ' ').replace('*', ' ').replace('_', ' ').replace('-', ' ')
+        tts = gTTS(text=text_without_chars, lang='en')
         temp_file = "temp_audio.mp3"
         tts.save(temp_file)
         with open(temp_file, "rb") as audio_file:
